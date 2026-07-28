@@ -7,6 +7,8 @@ class Solution:
             complement = target - num  # get number to check dict
 
             if complement in num_to_index:  # check if complement in dict
-                return [i, num_to_index[complement]]
+                return [num_to_index[complement], i]
 
             num_to_index[num] = i  # add num-index to dict
+
+        raise ValueError("No two sum solution")

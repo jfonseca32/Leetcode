@@ -1,8 +1,8 @@
 # Coding Patterns Reference
 
 ## Hashmaps
-
-Store elements in a dict to get to **O(1)** time complexity. Replaces \(O(N^2)\) brute force nested loops.
+	
+ Store elements in a dict to get to **O(1)** time complexity. Replaces O(N^2) brute force nested loops.
 
 * **Initialize** an empty dict.
 * **Iterate** through the collection using a loop.
@@ -17,14 +17,14 @@ keys and values depend on what the problem asks (storing the element value or it
 ```python
 def hashmap_pattern(nums, target):
     lookup = {} # Key: value/complement, Value: index or count
-    
+
     for index, num in enumerate(nums):
         complement = target - num  # Example condition (e.g., Two Sum)
-        
+
         if complement in lookup:
             return [lookup[complement], index] # Condition met
-            
-        lookup[num] = index # Store for future iterations
-        
+
+     lookup = {} # Key: num, Value: index or count
+
     return []
 ```
