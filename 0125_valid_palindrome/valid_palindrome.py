@@ -15,9 +15,9 @@ class Solution:
         while i < j:
             if cleaned[i] != cleaned[j]:
                 return False
-            else:
-                # Same, move inward
-                i += 1
-                j -= 1
+
+            # Same, move inward
+            i += 1
+            j -= 1
 
         return True
