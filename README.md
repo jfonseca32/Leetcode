@@ -9,8 +9,8 @@ Each problem lives in its own numbered directory:
 ```text
 0001_two_sum/
   README.md
-  solution.py
-  test_solution.py
+  two_sum.py
+  test_two_sum.py
 ```
 
 ## Setup
@@ -33,8 +33,8 @@ make check  # run tests and linting
 
 1. Create a numbered directory, for example `0002_add_two_numbers/`.
 2. Add the problem notes to `README.md`.
-3. Add the implementation to `solution.py`.
-4. Add pytest coverage in `test_solution.py`.
+3. Add the implementation to a problem-specific Python file, for example `add_two_numbers.py`.
+4. Add pytest coverage in a matching problem-specific test file, for example `test_add_two_numbers.py`.
 5. Run `make check` before opening a pull request.
 
 ## Tooling

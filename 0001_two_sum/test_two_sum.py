@@ -1,5 +1,5 @@
 import pytest
-from solution import Solution
+from two_sum import Solution
 
 
 @pytest.mark.parametrize(
