@@ -13,7 +13,8 @@ from valid_palindrome import Solution
         ("race a car", False),
     ],
 )
-def test_is_palindrome(s, expected):
-    result = Solution().isPalindrome(s)
+class TestValidPalindrome:
+    def test_is_palindrome(self, s, expected):
+        result = Solution().isPalindrome(s)
 
-    assert result == expected
+        assert result == expected
