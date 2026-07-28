@@ -1,7 +1,7 @@
 # Coding Patterns Reference
 
 ## Hashmaps
-	
+
  Store elements in a dict to get to **O(1)** time complexity. Replaces O(N^2) brute force nested loops.
 
 * **Initialize** an empty dict.
