@@ -11,11 +11,10 @@ from two_sum import Solution
         ([0, 4, 3, 0], 0),
     ],
 )
-class TestTwoSum:
-    def test_two_sum(self, nums, target):
-        result = Solution().twoSum(nums, target)
+def test_two_sum(nums, target):
+    result = Solution().twoSum(nums, target)
 
-        assert len(result) == 2
-        first, second = result
-        assert first != second
-        assert nums[first] + nums[second] == target
+    assert len(result) == 2
+    first, second = result
+    assert first != second
+    assert nums[first] + nums[second] == target
