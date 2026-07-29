@@ -65,3 +65,58 @@ def two_pointer_pattern(values, target):
 
     return []
 ```
+
+## Windows
+
+Use window boundaries to track a contiguous section of an array or string. Most window problems avoid rebuilding slices by updating counts, sums, or state as the window moves, keeping things O(N).
+
+* **Initialize** left/right boundaries and any state needed for the current window.
+* **Expand** or **Shrink** the window by moving the right or left or both boundaries.
+* **Update** the state with the new value.
+* **Check** if the current window answers the problem or violates a rule.
+
+Depends on how the problem controls size:
+
+* **Dynamic window**: grow and shrink until a condition is valid, usually for "longest" or "minimum length" problems.
+* **Fixed window**: keep the window at exactly size `k`, usually for max/min sum, averages, or counts.
+
+---
+
+```python
+def dynamic_window_pattern(values):
+    left = 0
+    state = {}  # Could also be a sum, count, or set
+    best = 0
+
+    for right, value in enumerate(values):
+        state[value] = state.get(value, 0) + 1
+
+        while not window_is_valid(state):
+            left_value = values[left]
+            state[left_value] -= 1
+
+            if state[left_value] == 0:
+                del state[left_value]
+
+            left += 1
+
+        best = max(best, right - left + 1)
+
+    return best
+
+
+def fixed_window_pattern(nums, k):
+    current = 0
+    best = 0
+
+    for right, num in enumerate(nums):
+        current += num
+
+        if right >= k:
+            current -= nums[right - k]  # Remove value outside window
+
+        if right >= k - 1:
+            best = max(best, current)
+
+    return best
+```
